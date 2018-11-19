@@ -6,3 +6,5 @@ This is a finsih school project where you can convert a interger to a roman numb
 It can convert number from 1 to 4999 only.
 
 Try it ;)
+
+Samuel C.
