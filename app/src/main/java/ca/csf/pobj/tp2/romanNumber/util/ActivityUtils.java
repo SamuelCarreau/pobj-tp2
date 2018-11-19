@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-public class activityUtils {
+public class ActivityUtils {
 
-    private activityUtils() {
+    private ActivityUtils() {
         //Private, so it is a static class
     }
 
