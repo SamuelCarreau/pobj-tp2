@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Chiffres Romains</string>
+    <string name="InputEditTextHint">Appuyez pour saisir un nombre</string>
+    <string name="convertButtonText">EN CHIFFRES ROMAINS</string>
+    <string name="stringEmptyError">Aucun nombre saisi</string>
+    <string name="stringNotValidError">La valeur doit être entre 1 et 4999</string>
+    <string name="stringNotNumberError">Ce n\'est pas un chiffre</string>
+    <string name="stringEmpty" />
+</resources>
