@@ -43,7 +43,7 @@ public class RomanConversionActivity extends AppCompatActivity {
 
     public void onConvertButtonClicked(View view) {
         doConvertAction();
-        activityUtils.hideKeyboard(this);
+        ActivityUtils.hideKeyboard(this);
     }
 
     private void setListener(final EditText editText) {
