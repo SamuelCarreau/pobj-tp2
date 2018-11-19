@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.app.Activity;
 
 import ca.csf.pobj.tp2.romanNumber.util.*;
 import ca.csf.pobj.tp2.R;
@@ -45,7 +43,7 @@ public class RomanConversionActivity extends AppCompatActivity {
 
     public void onConvertButtonClicked(View view) {
         doConvertAction();
-        hideKeyboard(this);
+        activityUtils.hideKeyboard(this);
     }
 
     private void setListener(final EditText editText) {
@@ -112,17 +110,7 @@ public class RomanConversionActivity extends AppCompatActivity {
                 .show();
     }
 
-    public static void hideKeyboard(Activity activity) {
-        //Source : https://stackoverflow.com/questions/1109022/close-hide-the-android-soft-keyboard
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        //Find the currently focused view, so we can grab the correct window token from it.
-        View view = activity.getCurrentFocus();
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
-        if (view == null) {
-            view = new View(activity);
-        }
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
+
 
 
 }
