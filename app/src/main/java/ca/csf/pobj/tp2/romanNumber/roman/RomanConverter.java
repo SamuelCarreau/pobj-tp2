@@ -14,7 +14,7 @@ public class RomanConverter {
 
     public static String ConvertToRoman(int integer){
 
-        tryIfValid(integer,MIN_INT,MAX_INT);
+        tryIfValid(integer);
 
         int[] intByPower = intCuttingByPower(integer);
 
@@ -87,8 +87,8 @@ public class RomanConverter {
         return power >=0 && power <=MAX_POWER;
     }
 
-    private static void tryIfValid(int integer,int minValue,int maxValue){
-        if(integer < minValue || integer > maxValue)
-            throw new IllegalArgumentException("number must be betwen"+minValue+" and "+maxValue);
+    private static void tryIfValid(int integer){
+        if(integer < RomanConverter.MIN_INT || integer > RomanConverter.MAX_INT)
+            throw new IllegalArgumentException("number must be betwen"+RomanConverter.MIN_INT +" and "+RomanConverter.MAX_INT);
     }
 }
