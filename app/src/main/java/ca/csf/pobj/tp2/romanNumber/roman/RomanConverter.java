@@ -39,8 +39,6 @@ public class RomanConverter {
     }
 
     private static String getRomanNumber(int integer,int power){
-        if(powerIsValid(power)){
-
             String unit = getUnit(power);
             String half = getHalf(power);
 
@@ -62,8 +60,6 @@ public class RomanConverter {
                     return countUnit(integer,unit);
                 }
             }
-        }
-        return "";
     }
 
     private static String countUnit(int integer, String unit) {
@@ -81,10 +77,6 @@ public class RomanConverter {
     private static String getHalf(int power){
             return ROMAN_HALFS[power];
 
-    }
-
-    private static boolean powerIsValid(int power) {
-        return power >=0 && power <=MAX_POWER;
     }
 
     private static void tryIfValid(int integer){
