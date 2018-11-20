@@ -5,12 +5,16 @@ public class RomanConverter {
     private static final String[] ROMAN_UNITS = {"I","X","C","M"};
     private static final String[] ROMAN_HALFS = {"V","L","D",""};
     private static final int MAX_POWER = 3;
+    private static final int MIN_INT = 1;
+    private static final int MAX_INT = 4999;
 
     private RomanConverter() {
         //Private, so it is a static class
     }
 
     public static String ConvertToRoman(int integer){
+
+        tryIfValid(integer,MIN_INT,MAX_INT);
 
         int[] intByPower = intCuttingByPower(integer);
 
@@ -83,4 +87,8 @@ public class RomanConverter {
         return power >=0 && power <=MAX_POWER;
     }
 
+    private static void tryIfValid(int integer,int minValue,int maxValue){
+        if(integer < minValue || integer > maxValue)
+            throw new IllegalArgumentException("number must be betwen"+minValue+" and "+maxValue);
+    }
 }

@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class RomanConverterTest {
 
     @Test
-    public void ConvertToRomanGiveExpextedRomanNumber(){
+    public void convertToRomanGiveExpextedRomanNumber(){
 
         //for 4876 expect MMMMDCCCLXXVI
         assertEquals("MMMMDCCCLXXVI",RomanConverter.ConvertToRoman(4876));
@@ -36,12 +36,22 @@ public class RomanConverterTest {
     }
 
     @Test
-    public void ConvertOfNumberFrom1to4999GiveUniqueAnswer(){
+    public void convertOfNumberFrom1to4999GiveUniqueAnswer(){
         TreeSet<String> romanNumbers = new TreeSet<>();
         for(int i = 1 ; i <= 4999 ; i++){
             romanNumbers.add(RomanConverter.ConvertToRoman(i));
         }
 
         assertEquals(4999,romanNumbers.size());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void WillTrowExceptionForNumberBelowOne(){
+        RomanConverter.ConvertToRoman(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void WillTrowExceptionForNumberAbove4999(){
+        RomanConverter.ConvertToRoman(5000);
     }
 }
