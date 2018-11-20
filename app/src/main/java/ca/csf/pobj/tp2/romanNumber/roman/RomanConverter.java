@@ -9,7 +9,7 @@ public class RomanConverter {
     private static final int MAX_INT = 4999;
 
     private RomanConverter() {
-        //Private, so it is a static class
+        //Private, so it is a static class.
     }
 
     public static String ConvertToRoman(int integer){
