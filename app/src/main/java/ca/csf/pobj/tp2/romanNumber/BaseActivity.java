@@ -1,16 +1,13 @@
-package ca.csf.pobj.tp2.romanNumber.util;
+package ca.csf.pobj.tp2.romanNumber;
 
 import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-public class ActivityUtils {
+public abstract class BaseActivity extends AppCompatActivity {
 
-    private ActivityUtils() {
-        //Private, so it is a static class
-    }
-
-    public static void hideKeyboard(Activity activity) {
+    protected static void hideKeyboard(Activity activity) {
         //Source : https://stackoverflow.com/questions/1109022/close-hide-the-android-soft-keyboard
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         //Find the currently focused view, so we can grab the correct window token from it.

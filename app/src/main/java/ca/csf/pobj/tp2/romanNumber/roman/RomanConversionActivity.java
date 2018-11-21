@@ -9,10 +9,11 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import ca.csf.pobj.tp2.romanNumber.BaseActivity;
 import ca.csf.pobj.tp2.romanNumber.util.*;
 import ca.csf.pobj.tp2.R;
 
-public class RomanConversionActivity extends AppCompatActivity {
+public class RomanConversionActivity extends BaseActivity {
 
     private EditText inputEditText;
     private TextView outputTextView;
@@ -43,7 +44,7 @@ public class RomanConversionActivity extends AppCompatActivity {
 
     public void onConvertButtonClicked(View view) {
         doConvertAction();
-        ActivityUtils.hideKeyboard(this);
+        hideKeyboard(this);
     }
 
     private void setListener(final EditText editText) {

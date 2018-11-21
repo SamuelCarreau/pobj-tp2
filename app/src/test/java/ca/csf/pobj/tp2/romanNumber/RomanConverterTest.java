@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class RomanConverterTest {
 
     @Test
-    public void convertToRomanGiveExpextedRomanNumber(){
+    public void convertToRomanGiveExpectedRomanNumber(){
 
         //for 4876 expect MMMMDCCCLXXVI
         assertEquals("MMMMDCCCLXXVI",RomanConverter.ConvertToRoman(4876));
