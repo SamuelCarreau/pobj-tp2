@@ -1,6 +1,6 @@
 package ca.csf.pobj.tp2.romanNumber.util;
 
-public class StringUtils {
+public final class StringUtils {
 
     private  StringUtils(){
         //Private, so it is a static class
