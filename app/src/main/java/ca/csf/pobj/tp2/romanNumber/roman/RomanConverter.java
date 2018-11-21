@@ -12,11 +12,11 @@ public class RomanConverter {
         //Private, so it is a static class
     }
 
-    public static String ConvertToRoman(int integer){
+    public static String ConvertToRoman(int number){
 
-        tryIfValid(integer);
+        tryIfValid(number);
 
-        int[] intByPower = intCuttingByPower(integer);
+        int[] intByPower = intCuttingByPower(number);
 
         StringBuilder RomanNumberBuilder = new StringBuilder();
 
@@ -26,45 +26,45 @@ public class RomanConverter {
         return RomanNumberBuilder.toString();
     }
 
-    private static int[] intCuttingByPower(int integer){
-        int[] cutInteger = new int[MAX_POWER+1];
-        int rest = integer;
+    private static int[] intCuttingByPower(int number){
+        int[] cutNumber = new int[MAX_POWER+1];
+        int rest = number;
 
         for(int i = MAX_POWER ; i >=0 ;i--){
-            cutInteger[i] = rest/(int)Math.pow(10,i);
+            cutNumber[i] = rest/(int)Math.pow(10,i);
             rest = rest%(int)Math.pow(10,i);
         }
 
-        return cutInteger;
+        return cutNumber;
     }
 
-    private static String getRomanNumber(int integer,int power){
+    private static String getRomanNumber(int number,int power){
             String unit = getUnit(power);
             String half = getHalf(power);
 
             if(power == 3){
-                return countUnit(integer,unit);
+                return countUnit(number,unit);
             }
             else {
-                if(integer == 9){
+                if(number == 9){
                     String nextPowerUnit = getUnit(power+1);
                     return unit+nextPowerUnit;
                 }
-                else if(integer > 4){
-                    return half+countUnit(integer-5,unit);
+                else if(number > 4){
+                    return half+countUnit(number-5,unit);
                 }
-                else if(integer == 4){
+                else if(number == 4){
                     return unit+half;
                 }
                 else{
-                    return countUnit(integer,unit);
+                    return countUnit(number,unit);
                 }
             }
     }
 
-    private static String countUnit(int integer, String unit) {
+    private static String countUnit(int number, String unit) {
         StringBuilder stringBuilder = new StringBuilder();
-        for(int i = 0 ; i < integer ; i++){
+        for(int i = 0 ; i < number ; i++){
             stringBuilder.append(unit);
         }
         return stringBuilder.toString();
@@ -79,8 +79,8 @@ public class RomanConverter {
 
     }
 
-    private static void tryIfValid(int integer){
-        if(integer < RomanConverter.MIN_INT || integer > RomanConverter.MAX_INT)
-            throw new IllegalArgumentException("number must be betwen"+RomanConverter.MIN_INT +" and "+RomanConverter.MAX_INT);
+    private static void tryIfValid(int number){
+        if(number < RomanConverter.MIN_INT || number > RomanConverter.MAX_INT)
+            throw new IllegalArgumentException("Number must be betwen"+RomanConverter.MIN_INT +" and "+RomanConverter.MAX_INT);
     }
 }
