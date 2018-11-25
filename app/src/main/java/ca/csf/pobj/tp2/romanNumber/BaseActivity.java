@@ -7,6 +7,7 @@ import android.view.inputmethod.InputMethodManager;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
+    //BEN_CORRECTION : Paramètre "activity" inutile, car la valeur est toujours "this".
     protected static void hideKeyboard(Activity activity) {
         //Source : https://stackoverflow.com/questions/1109022/close-hide-the-android-soft-keyboard
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
